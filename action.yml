@@ -1,4 +1,4 @@
-name: 'Check Unacceptable Language'
+name: 'Check Language'
 description: 'Runs a script to check for unacceptable language'
 
 runs:
