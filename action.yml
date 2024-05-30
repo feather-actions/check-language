@@ -1,0 +1,15 @@
+name: 'Check Unacceptable Language'
+description: 'Runs a script to check for unacceptable language'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: run script
+      shell: bash
+      run: |
+        chmod -R oug+x ${{github.action_path}}/check-unacceptable-language.sh
+        ${{github.action_path}}/check-unacceptable-language.sh
+
+branding:
+  icon: 'server'
+  color: 'green'
