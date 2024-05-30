@@ -7,7 +7,7 @@ This GitHub Action runs a script to check for unacceptable language in your repo
 Include the action in your workflow.
 
 ```yaml
-- uses: feather-actions/check-unacceptable-language@0.0.1
+- uses: feather-actions/check-language@0.0.1
 ```
 Full example:
 
@@ -25,6 +25,6 @@ jobs:
           fetch-depth: 1
   
       - name: Check Unacceptable Language
-        uses: feather-actions/check-unacceptable-language@0.0.1
+        uses: feather-actions/check-language@0.0.1
 ```
 
