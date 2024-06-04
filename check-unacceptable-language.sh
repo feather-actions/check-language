@@ -11,7 +11,7 @@ log "Checking for unacceptable language..."
 if ! test -f ${UNACCEPTABLE_LANGUAGE_PATTERNS_PATH}; then
   CURRENT_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
   UNACCEPTABLE_LANGUAGE_PATTERNS_PATH="${CURRENT_SCRIPT_DIR}/unacceptable-language.txt"
-  log "❗ There was no 'unacceptable-language.txt' file in the repository, so we use the one that is included with the github action."
+  log "❗ There was no 'unacceptable-language.txt' file in the repository, so using the one included with the GitHub action."
 
   PATHS_WITH_UNACCEPTABLE_LANGUAGE=$(git -C "${REPO_ROOT}" grep \
   -l -F -w \
@@ -30,7 +30,7 @@ fi
 if [ -n "${PATHS_WITH_UNACCEPTABLE_LANGUAGE}" ]; then
   log "❌ Found unacceptable language in files:"
   log "${PATHS_WITH_UNACCEPTABLE_LANGUAGE}"
-  exit 1;
+  exit 1
 fi
 
 log "✅ Found no unacceptable language."
