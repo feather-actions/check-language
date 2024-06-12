@@ -7,8 +7,11 @@ runs:
     - name: run script
       shell: bash
       run: |
-        chmod -R oug+x ${{github.action_path}}/check-unacceptable-language.sh
-        ${{github.action_path}}/check-unacceptable-language.sh
+        if [[ "$OSTYPE" == "linux-gnu"* ]]; then  # if OS is linux
+          git config --global --add safe.directory $PWD
+        fi
+        chmod -R oug+x ${GITHUB_ACTION_PATH}/check-unacceptable-language.sh
+        ${GITHUB_ACTION_PATH}/check-unacceptable-language.sh
 
 branding:
   icon: 'server'
